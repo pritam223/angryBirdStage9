@@ -13,8 +13,8 @@ var gameState = "onSling";
 var bg, backgroundImg ;
 
 function preload() {
-    getBackGroundImg() ;
-
+    //getBackGroundImg() ;
+    backgroundImg=loadImage("sprites/bg.png") ;
      
 }
 
@@ -97,7 +97,9 @@ function mouseReleased(){
 
 function keyPressed(){
     if(keyCode === 32){
-       // slingshot.attach(bird.body);
+     bird.trajectory=[] ;
+     Matter.Body.setPosition (bird.body ,{x:200 , y:50} ) ;
+     slingshot.attach(bird.body);
     }
 }
 
